@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Cybersec Reads</title>
+
+    <!-- Requirement 1c: Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Accessibility Requirements -->
+    <!-- 7a. Add alt text to images -->
+    <!-- 7b. Use proper labels for navigation and buttons -->
+    <!-- 7c. Ensure sufficient text contrast with background for readability -->
+
+    <!-- Design Enhancements -->
+    <!-- 8a. Add hover effects for buttons -->
+    <!-- 8b. Underline navigation links -->
+    <!-- 8c. Add box shadows for book cards and cart items -->
+    <!-- 8d. Maintain consistent padding, margins, and font sizes -->
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Your Shopping Cart</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" title="Go to Home Page">Home</a></li>
+                <li><a href="#" title="Proceed to Checkout">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Cart Section -->
+    <main>
+        <section id="cart-items">
+            <h2>Cart Items</h2>
+            <!-- Example Cart Item 1: Cloud Security Book 1 -->
+            <div class="cart-item">
+                <img src="image_gallery/cloud_security_1.png" alt="Book cover of Cloud Security Book 1, showing a cloud and a padlock" class="cart-item-image">
+                <div class="item-details">
+                    <h3>Cloud Security Book 1</h3>
+                    <p>Price: $29.99</p>
+                    <button class="remove-button" aria-label="Remove Cloud Security Book 1 from cart">Remove</button>
+                </div>
+            </div>
+
+            <!-- Example Cart Item 2: Cryptography Book 1 -->
+            <div class="cart-item">
+                <img src="image_gallery/cryptography_1.png" alt="Book cover of Cryptography Book 1, showing cryptographic symbols" class="cart-item-image">
+                <div class="item-details">
+                    <h3>Cryptography Book 1</h3>
+                    <p>Price: $49.99</p>
+                    <button class="remove-button" aria-label="Remove Cryptography Book 1 from cart">Remove</button>
+                </div>
+            </div>
+
+            <!-- Example Cart Item 3: Cybersecurity Basics Book 1 -->
+            <div class="cart-item">
+                <img src="image_gallery/cyber_basics_1.png" alt="Book cover of Cybersecurity Basics Book 1, showing a digital lock on a laptop" class="cart-item-image">
+                <div class="item-details">
+                    <h3>Cybersecurity Basics Book 1</h3>
+                    <p>Price: $15.99</p>
+                    <button class="remove-button" aria-label="Remove Cybersecurity Basics Book 1 from cart">Remove</button>
+                </div>
+            </div>
+
+            <!-- Example Cart Item 4: Network Security Book 1 -->
+            <div class="cart-item">
+                <img src="image_gallery/network_security_1.png" alt="Book cover of Network Security Book 1, showing a computer network" class="cart-item-image">
+                <div class="item-details">
+                    <h3>Network Security Book 1</h3>
+                    <p>Price: $35.99</p>
+                    <button class="remove-button" aria-label="Remove Network Security Book 1 from cart">Remove</button>
+                </div>
+            </div>
+
+            <!-- Example Cart Item 5: Penetration Testing Book 1 -->
+            <div class="cart-item">
+                <img src="image_gallery/pentesting_1.png" alt="Book cover of Penetration Testing Book 1, showing a hacker silhouette on a laptop" class="cart-item-image">
+                <div class="item-details">
+                    <h3>Penetration Testing Book 1</h3>
+                    <p>Price: $9.99</p>
+                    <button class="remove-button" aria-label="Remove Penetration Testing Book 1 from cart">Remove</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Total and Checkout -->
+        <section id="cart-summary">
+            <h2>Order Summary</h2>
+            <p>Total: $141.95</p>
+            <button class="checkout-button" aria-label="Proceed to checkout">Proceed to Checkout</button>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 HKR. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
+

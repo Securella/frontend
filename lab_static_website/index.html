@@ -2,107 +2,302 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cybersec Reads</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersec Reads</title>
+
+    <!-- Requirement 1c: Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Accessibility Requirements -->
+    <!-- 7a. Add alt text to images -->
+    <!-- 7b. Use proper labels for navigation and buttons -->
+    <!-- 7c. Ensure sufficient text contrast with background for readability -->
+
+    <!-- Design Enhancements -->
+    <!-- 8a. Add hover effects for buttons -->
+    <!-- 8b. Underline navigation links -->
+    <!-- 8c. Add box shadows for book cards and cart items -->
+    <!-- 8d. Maintain consistent padding, margins, and font sizes -->
+
+    <style>
+        /* Base Styles (Light Theme by Default) */
+        :root {
+            --background-color: #ffffff;
+            --text-color: #000000;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Dark Theme Styles */
+        body.dark-theme {
+            --background-color: #2c2c2c;
+            --text-color: #ffffff;
+        }
+
+        /* Theme Toggle Styles */
+        .theme-toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .theme-toggle-label {
+            cursor: pointer;
+        }
+
+        .theme-toggle-input {
+            display: none;
+        }
+
+        .theme-toggle-input:checked ~ body {
+            background-color: #2c2c2c;
+            color: #ffffff;
+        }
+
+        /* Category Books Layout */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .book-card {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .book-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 
 <body>
-  <!-- Header Section -->
-  <header>
-    <h1>Cybersec Reads</h1>
-    <nav>
-      <ul>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#recommend">Highly Recommended</a></li>
-        <li><a href="#cart">Shopping Cart</a></li>
-        <li><a href="#about">About Us</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Requirement 1a: Semantic tag <header> -->
+    <header>
+        <h1>Cybersec Reads</h1>
+        <nav>
+            <ul>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#recommend">Highly Recommended</a></li>
+                <li><a href="shopping_cart.html">Shopping Cart</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Main Section -->
-  <main>
-    <!-- Categories Section -->
-    <section id="categories">
-      <h2>Cybersecurity Categories</h2>
-      <ul>
-        <li><a href="#cloud-security">Cloud Security</a></li>
-        <li><a href="#cryptography">Cryptography</a></li>
-        <li><a href="#cyber-basics">Cybersecurity Basics</a></li>
-        <li><a href="#network-security">Network Security</a></li>
-        <li><a href="#pen-testing">Penetration Testing</a></li>
-      </ul>
-    </section>
+    <!-- Requirement 2.1: Page layout using CSS Grid -->
+    <div class="page-layout">
+        <!-- Requirement 2.1c: Left sidebar for categories -->
+        <aside id="categories-sidebar">
+            <h2>Categories</h2>
+            <!-- Requirement 3a: Use a <ul> for category links -->
+            <ul>
+                <li><a href="#cloud-security">Cloud Security</a></li>
+                <li><a href="#cryptography">Cryptography</a></li>
+                <li><a href="#cyber-basics">Cybersecurity Basics</a></li>
+                <li><a href="#network-security">Network Security</a></li>
+                <li><a href="#pen-testing">Penetration Testing</a></li>
+            </ul>
+        </aside>
 
-    <!-- Highly Recommended Section -->
-    <section id="recommend">
-      <h2>Highly Recommended</h2>
-      <div class="recommend-grid">
-        <!-- Highly Recommended Book 1 -->
-        <article class="book-card recommend">
-          <img src="hackers-playbook.jpg" alt="The Hacker's Book 1 Cover">
-          <h3>The Hacker's Playbook 3</h3>
-          <p>Author: Peter Kim</p>
-          <p>Price: $29.99</p>
-          <button>Add to Cart</button>
-        </article>
-        <!-- Highly Recommended Book 2 -->
-        <article class="book-card recommend">
-          <img src="cloud-security.jpg" alt="Cloud Security Book 2 Cover">
-          <h3>Cloud Security Handbook</h3>
-          <p>Author: Chris Hughes</p>
-          <p>Price: $34.99</p>
-          <button>Add to Cart</button>
-        </article>
-      </div>
-    </section>
+        <!-- Requirement 1a: Semantic tag <main> -->
+        <main>
+            <!-- Highly Recommended Section -->
+            <section id="recommend">
+                <h2>Highly Recommended</h2>
+                <div class="recommend-grid">
+                    <!-- Highly Recommended Book 1 -->
+                    <article class="book-card recommend">
+                        <img src="image_gallery/cloud_security_1.png" alt="Cloud Security Book 1" class="book-image">
+                        <h3>The Hacker's Playbook 3</h3>
+                        <p>Author: Joe Doe</p>
+                        <p>Price: $9.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                    <!-- Highly Recommended Book 2 -->
+                    <article class="book-card recommend">
+                        <img src="image_gallery/cloud_security_2.png" alt="Cloud Security Book 2" class="book-image">
+                        <h3>Cloud Security Handbook</h3>
+                        <p>Author: Joe Doe</p>
+                        <p>Price: $9.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                </div>
+            </section>
 
-    <!-- Books Display Grid -->
-    <section id="books">
-      <h2>Available Cybersecurity Books</h2>
-      <div class="book-grid">
-        <!-- Example Book 1 -->
-        <article class="book-card">
-          <img src="hacking-art.jpg" alt="Hacking Book 2 Cover">
-          <h3>The Art of Hacking</h3>
-          <p>Author: Kevin Mitnick</p>
-          <p>Price: $19.99</p>
-          <button>Add to Cart</button>
-        </article>
-        <!-- Example Book 2 -->
-        <article class="book-card">
-          <img src="cybersecurity-basics.jpg" alt="Cybersecurity Basics Book 1 Cover">
-          <h3>Cybersecurity Basics</h3>
-          <p>Author: Chuck Easttom</p>
-          <p>Price: $14.99</p>
-          <button>Add to Cart</button>
-        </article>
-        <!-- Example Book 3 -->
-        <article class="book-card">
-          <img src="cryptography.jpg" alt="Cryptography Book Cover">
-          <h3>Practical Cryptography</h3>
-          <p>Author: Bruce Schneier</p>
-          <p>Price: $24.99</p>
-          <button>Add to Cart</button>
-        </article>
-      </div>
-    </section>
-  </main>
+            <!-- Books Display Section -->
+            <section id="cloud-security">
+                <h2>Cloud Security</h2>
+                <div class="book-grid">
+                    <!-- Book 1 for Cloud Security -->
+                    <article class="book-card">
+                        <img src="image_gallery/cloud_security_1.png" alt="Cloud Security Book 1" class="book-image">
+                        <h3>Cloud Security Book 1</h3>
+                        <p>Author: John Smith</p>
+                        <p>Price: $29.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                    <!-- Book 2 for Cloud Security -->
+                    <article class="book-card">
+                        <img src="image_gallery/cloud_security_2.png" alt="Cloud Security Book 2" class="book-image">
+                        <h3>Cloud Security Book 2</h3>
+                        <p>Author: Jane Doe</p>
+                        <p>Price: $19.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                    <!-- Book 3 for Cloud Security -->
+                    <article class="book-card">
+                        <img src="image_gallery/cloud_security_3.png" alt="Cloud Security Book 3" class="book-image">
+                        <h3>Cloud Security Book 3</h3>
+                        <p>Author: Alice Green</p>
+                        <p>Price: $39.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                </div>
+            </section>
 
-  <!-- Sidebar: Shopping Cart -->
-  <aside id="cart">
-    <h2>Shopping Cart</h2>
-    <ul>
-      <li>Cart is currently empty. Please, place your order.</li>
-    </ul>
-  </aside>
+            <section id="cryptography">
+                <h2>Cryptography</h2>
+                <div class="book-grid">
+                    <!-- Book 1 for Cryptography -->
+                    <article class="book-card">
+                        <img src="image_gallery/cryptography_1.png" alt="Cryptography Book 1" class="book-image">
+                        <h3>Cryptography Book 1</h3>
+                        <p>Author: Bob Black</p>
+                        <p>Price: $49.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                    <!-- Book 2 for Cryptography -->
+                    <article class="book-card">
+                        <img src="image_gallery/cryptography_2.png" alt="Cryptography Book 2" class="book-image">
+                        <h3>Cryptography Book 2</h3>
+                        <p>Author: Sarah White</p>
+                        <p>Price: $59.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                    <!-- Book 3 for Cryptography -->
+                    <article class="book-card">
+                        <img src="image_gallery/cryptography_3.png" alt="Cryptography Book 3" class="book-image">
+                        <h3>Cryptography Book 3</h3>
+                        <p>Author: Tom Red</p>
+                        <p>Price: $29.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                </div>
+            </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Oona T. HKR. All rights reserved.</p>
-  </footer>
+            <section id="cyber-basics">
+                <h2>Cybersecurity Basics</h2>
+                <div class="book-grid">
+                    <!-- Book 1 for Cybersecurity Basics -->
+                    <article class="book-card">
+                        <img src="image_gallery/cyber_basics_1.png" alt="Cybersecurity Basics Book 1" class="book-image">
+                        <h3>Cybersecurity Basics Book 1</h3>
+                        <p>Author: Liam Brown</p>
+                        <p>Price: $15.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                    <!-- Book 2 for Cybersecurity Basics -->
+                    <article class="book-card">
+                        <img src="image_gallery/cyber_basics_2.png" alt="Cybersecurity Basics Book 2" class="book-image">
+                        <h3>Cybersecurity Basics Book 2</h3>
+                        <p>Author: Emma Blue</p>
+                        <p>Price: $25.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                    <!-- Book 3 for Cybersecurity Basics -->
+                    <article class="book-card">
+                        <img src="image_gallery/cyber_basics_3.png" alt="Cybersecurity Basics Book 3" class="book-image">
+                        <h3>Cybersecurity Basics Book 3</h3>
+                        <p>Author: James Grey</p>
+                        <p>Price: $10.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                </div>
+            </section>
+
+            <section id="network-security">
+                <h2>Network Security</h2>
+                <div class="book-grid">
+                    <!-- Book 1 for Network Security -->
+                    <article class="book-card">
+                        <img src="image_gallery/network_security_1.png" alt="Network Security Book 1" class="book-image">
+                        <h3>Network Security Book 1</h3>
+                        <p>Author: Oliver Black</p>
+                        <p>Price: $35.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                    <!-- Book 2 for Network Security -->
+                    <article class="book-card">
+                        <img src="image_gallery/network_security_2.png" alt="Network Security Book 2" class="book-image">
+                        <h3>Network Security Book 2</h3>
+                        <p>Author: Mia Green</p>
+                        <p>Price: $40.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                    <!-- Book 3 for Network Security -->
+                    <article class="book-card">
+                        <img src="image_gallery/network_security_3.png" alt="Network Security Book 3" class="book-image">
+                        <h3>Network Security Book 3</h3>
+                        <p>Author: Jack White</p>
+                        <p>Price: $45.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                </div>
+            </section>
+
+            <section id="pen-testing">
+                <h2>Penetration Testing</h2>
+                <div class="book-grid">
+                    <!-- Book 1 for Penetration Testing -->
+                    <article class="book-card">
+                        <img src="image_gallery/pentesting_1.png" alt="Penetration Testing Book 1" class="book-image">
+                        <h3>Penetration Testing Book 1</h3>
+                        <p>Author: Ava Yellow</p>
+                        <p>Price: $9.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                    <!-- Book 2 for Penetration Testing -->
+                    <article class="book-card">
+                        <img src="image_gallery/pentesting_2.png" alt="Penetration Testing Book 2" class="book-image">
+                        <h3>Penetration Testing Book 2</h3>
+                        <p>Author: Sophia Red</p>
+                        <p>Price: $14.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                    <!-- Book 3 for Penetration Testing -->
+                    <article class="book-card">
+                        <img src="image_gallery/pentesting_3.png" alt="Penetration Testing Book 3" class="book-image">
+                        <h3>Penetration Testing Book 3</h3>
+                        <p>Author: Lucas Blue</p>
+                        <p>Price: $29.99</p>
+                        <button class="buy-button">Add to Cart</button>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle-container">
+        <label class="theme-toggle-label" for="theme-toggle">Dark Mode:</label>
+        <input type="checkbox" id="theme-toggle" class="theme-toggle-input">
+    </div>
 </body>
 
 </html>
+
+
+
+
