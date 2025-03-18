@@ -34,9 +34,10 @@
         }
 
         /* Dark Theme Styles */
+        /* Troubleshooting: toggle .dark-theme via JavaScript */
         body.dark-theme {
-            --background-color: #2c2c2c;
-            --text-color: #ffffff;
+            --background-color: #1e1e1e; /* dark gray */
+            --text-color: #f5f5f5;       /* lighter text for better contrast */
         }
 
         /* Theme Toggle Styles */
@@ -53,11 +54,6 @@
 
         .theme-toggle-input {
             display: none;
-        }
-
-        .theme-toggle-input:checked ~ body {
-            background-color: #2c2c2c;
-            color: #ffffff;
         }
 
         /* Category Books Layout */
@@ -89,7 +85,7 @@
         <h1>Cybersec Reads</h1>
         <nav>
             <ul>
-                <li><a href="#categories">Categories</a></li>
+                <li><a href="#categories-sidebar">Categories</a></li>
                 <li><a href="#recommend">Highly Recommended</a></li>
                 <li><a href="shopping_cart.html">Shopping Cart</a></li>
             </ul>
@@ -101,7 +97,7 @@
         <!-- Requirement 2.1c: Left sidebar for categories -->
         <aside id="categories-sidebar">
             <h2>Categories</h2>
-            <!-- Requirement 3a: Use a <ul> for category links -->
+            <!-- Requirement 3a: Use <ul> for category links -->
             <ul>
                 <li><a href="#cloud-security">Cloud Security</a></li>
                 <li><a href="#cryptography">Cryptography</a></li>
@@ -291,20 +287,51 @@
 
     <!-- Theme Toggle -->
     <div class="theme-toggle-container">
-        <label class="theme-toggle-label" for="theme-toggle">Dark Mode:</label>
+        <!-- Label id to update text dynamically -->
+        <label class="theme-toggle-label" id="theme-toggle-label" for="theme-toggle">Switch to Dark Mode</label>
         <input type="checkbox" id="theme-toggle" class="theme-toggle-input">
     </div>
-</body>
 
- <!-- Requirement 2.1e: Footer with styling -->
- <footer>
-    <p>&copy; 2025 HKR. All rights reserved.</p>
-    <p>Contact me at contact@cybersecreads.com</p>
-</footer>
-</body>
+    <!-- Requirement 2.1e: Footer with styling -->
+    <footer>
+       <p>&copy; 2025 HKR. All rights reserved.</p>
+       <p>Contact me at contact@cybersecreads.com</p>
+    </footer>
 
+    <!-- Dark Mode Toggle Script: toggles .dark-theme on body -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeToggleLabel = document.getElementById('theme-toggle-label');
+
+            function updateLabel() {
+                if (document.body.classList.contains('dark-theme')) {
+                    themeToggleLabel.textContent = 'Switch to Light Mode';
+                } else {
+                    themeToggleLabel.textContent = 'Switch to Dark Mode';
+                }
+            }
+
+            themeToggle.addEventListener('change', function() {
+                // Toggle 'dark-theme' class on body
+                document.body.classList.toggle('dark-theme', this.checked);
+
+                // Same toggle on header, footer, sidebar
+                document.querySelector('header').classList.toggle('dark-theme', this.checked);
+                document.querySelector('footer').classList.toggle('dark-theme', this.checked);
+
+                const sidebar = document.getElementById('categories-sidebar');
+                if (sidebar) {
+                    sidebar.classList.toggle('dark-theme', this.checked);
+                }
+
+                // Updating label text
+                updateLabel();
+            });
+
+            // Initializing label text on page load
+            updateLabel();
+        });
+    </script>
+</body>
 </html>
-
-
-
-

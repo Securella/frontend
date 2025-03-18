@@ -19,6 +19,13 @@
     <!-- 8b. Underline navigation links -->
     <!-- 8c. Add box shadows for book cards and cart items -->
     <!-- 8d. Maintain consistent padding, margins, and font sizes -->
+
+    <!-- Inline style to fix text too close to left side by adding margin to .cart-container -->
+    <style>
+      .cart-container {
+        margin: 0 2rem; /* Can be adjusted for more spacing, e.g. 3rem + */
+      }
+    </style>
 </head>
 
 <body>
@@ -33,74 +40,113 @@
         </nav>
     </header>
 
-    <!-- Main Cart Section -->
-    <main>
-        <section id="cart-items">
-            <h2>Cart Items</h2>
-            <!-- Example Cart Item 1: Cloud Security Book 1 -->
-            <div class="cart-item">
-                <img src="image_gallery/cloud_security_1.png" alt="Book cover of Cloud Security Book 1, showing a cloud and a padlock" class="cart-item-image">
-                <div class="item-details">
-                    <h3>Cloud Security Book 1</h3>
-                    <p>Price: $29.99</p>
-                    <button class="remove-button" aria-label="Remove Cloud Security Book 1 from cart">Remove</button>
-                </div>
-            </div>
+    <!-- Dark Mode Toggle Container -->
+    <div class="theme-toggle-container">
+        <label class="theme-toggle-label" id="theme-toggle-label-cart" for="theme-toggle-cart">Switch to Dark Mode</label>
+        <input type="checkbox" id="theme-toggle-cart" class="theme-toggle-input">
+    </div>
 
-            <!-- Example Cart Item 2: Cryptography Book 1 -->
-            <div class="cart-item">
-                <img src="image_gallery/cryptography_1.png" alt="Book cover of Cryptography Book 1, showing cryptographic symbols" class="cart-item-image">
-                <div class="item-details">
-                    <h3>Cryptography Book 1</h3>
-                    <p>Price: $49.99</p>
-                    <button class="remove-button" aria-label="Remove Cryptography Book 1 from cart">Remove</button>
-                </div>
-            </div>
+    <!-- Wrapping main content in container (to add horizontal margins) -->
+    <div class="cart-container">
+      <!-- Main Cart Section -->
+      <main>
+          <section id="cart-items">
+              <h2>Cart Items</h2>
+              <!-- Example Cart Item 1: Cloud Security Book 1 -->
+              <div class="cart-item">
+                  <img src="image_gallery/cloud_security_1.png" alt="Book cover of Cloud Security Book 1, showing a cloud and a padlock" class="cart-item-image">
+                  <div class="item-details">
+                      <h3>Cloud Security Book 1</h3>
+                      <p>Price: $29.99</p>
+                      <button class="remove-button" aria-label="Remove Cloud Security Book 1 from cart">Remove</button>
+                  </div>
+              </div>
 
-            <!-- Example Cart Item 3: Cybersecurity Basics Book 1 -->
-            <div class="cart-item">
-                <img src="image_gallery/cyber_basics_1.png" alt="Book cover of Cybersecurity Basics Book 1, showing a digital lock on a laptop" class="cart-item-image">
-                <div class="item-details">
-                    <h3>Cybersecurity Basics Book 1</h3>
-                    <p>Price: $15.99</p>
-                    <button class="remove-button" aria-label="Remove Cybersecurity Basics Book 1 from cart">Remove</button>
-                </div>
-            </div>
+              <!-- Example Cart Item 2: Cryptography Book 1 -->
+              <div class="cart-item">
+                  <img src="image_gallery/cryptography_1.png" alt="Book cover of Cryptography Book 1, showing cryptographic symbols" class="cart-item-image">
+                  <div class="item-details">
+                      <h3>Cryptography Book 1</h3>
+                      <p>Price: $49.99</p>
+                      <button class="remove-button" aria-label="Remove Cryptography Book 1 from cart">Remove</button>
+                  </div>
+              </div>
 
-            <!-- Example Cart Item 4: Network Security Book 1 -->
-            <div class="cart-item">
-                <img src="image_gallery/network_security_1.png" alt="Book cover of Network Security Book 1, showing a computer network" class="cart-item-image">
-                <div class="item-details">
-                    <h3>Network Security Book 1</h3>
-                    <p>Price: $35.99</p>
-                    <button class="remove-button" aria-label="Remove Network Security Book 1 from cart">Remove</button>
-                </div>
-            </div>
+              <!-- Example Cart Item 3: Cybersecurity Basics Book 1 -->
+              <div class="cart-item">
+                  <img src="image_gallery/cyber_basics_1.png" alt="Book cover of Cybersecurity Basics Book 1, showing a digital lock on a laptop" class="cart-item-image">
+                  <div class="item-details">
+                      <h3>Cybersecurity Basics Book 1</h3>
+                      <p>Price: $15.99</p>
+                      <button class="remove-button" aria-label="Remove Cybersecurity Basics Book 1 from cart">Remove</button>
+                  </div>
+              </div>
 
-            <!-- Example Cart Item 5: Penetration Testing Book 1 -->
-            <div class="cart-item">
-                <img src="image_gallery/pentesting_1.png" alt="Book cover of Penetration Testing Book 1, showing a hacker silhouette on a laptop" class="cart-item-image">
-                <div class="item-details">
-                    <h3>Penetration Testing Book 1</h3>
-                    <p>Price: $9.99</p>
-                    <button class="remove-button" aria-label="Remove Penetration Testing Book 1 from cart">Remove</button>
-                </div>
-            </div>
-        </section>
+              <!-- Example Cart Item 4: Network Security Book 1 -->
+              <div class="cart-item">
+                  <img src="image_gallery/network_security_1.png" alt="Book cover of Network Security Book 1, showing a computer network" class="cart-item-image">
+                  <div class="item-details">
+                      <h3>Network Security Book 1</h3>
+                      <p>Price: $35.99</p>
+                      <button class="remove-button" aria-label="Remove Network Security Book 1 from cart">Remove</button>
+                  </div>
+              </div>
 
-        <!-- Total and Checkout -->
-        <section id="cart-summary">
-            <h2>Order Summary</h2>
-            <p>Total: $141.95</p>
-            <button class="checkout-button" aria-label="Proceed to checkout">Proceed to Checkout</button>
-        </section>
-    </main>
+              <!-- Example Cart Item 5: Penetration Testing Book 1 -->
+              <div class="cart-item">
+                  <img src="image_gallery/pentesting_1.png" alt="Book cover of Penetration Testing Book 1, showing a hacker silhouette on a laptop" class="cart-item-image">
+                  <div class="item-details">
+                      <h3>Penetration Testing Book 1</h3>
+                      <p>Price: $9.99</p>
+                      <button class="remove-button" aria-label="Remove Penetration Testing Book 1 from cart">Remove</button>
+                  </div>
+              </div>
+          </section>
+
+          <!-- Total and Checkout Section -->
+          <section id="cart-summary">
+              <h2>Order Summary</h2>
+              <p>Total: $141.95</p>
+              <!-- Big checkout button -->
+              <button class="checkout-button" aria-label="Proceed to checkout">Proceed to Checkout</button>
+          </section>
+      </main>
+    </div> <!-- End of .cart-container -->
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 HKR. All rights reserved.</p>
         <p>Contact me at contact@cybersecreads.com</p>
     </footer>
+
+    <!-- Dark Mode Toggle Script for Shopping Cart -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const themeToggleCart = document.getElementById('theme-toggle-cart');
+        const themeToggleLabelCart = document.getElementById('theme-toggle-label-cart');
+
+        function updateLabelCart() {
+          if (document.body.classList.contains('dark-theme')) {
+            themeToggleLabelCart.textContent = 'Switch to Light Mode';
+          } else {
+            themeToggleLabelCart.textContent = 'Switch to Dark Mode';
+          }
+        }
+
+        themeToggleCart.addEventListener('change', function() {
+          document.body.classList.toggle('dark-theme', this.checked);
+          document.querySelector('header').classList.toggle('dark-theme', this.checked);
+          document.querySelector('footer').classList.toggle('dark-theme', this.checked);
+
+          // Optional and not included for now: other elements to toggle
+
+          updateLabelCart();
+        });
+
+        // Initializing label text on page load
+        updateLabelCart();
+      });
+    </script>
 </body>
 
 </html>
